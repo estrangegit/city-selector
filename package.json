@@ -1,0 +1,42 @@
+{
+  "name": "city-selector",
+  "version": "1.0.0",
+  "description": "sandbox to practice reactJs framework",
+  "main": "index.js",
+  "author": "Etienne Estrangin",
+  "dependencies": {
+    "@types/bootstrap": "^4.3.0",
+    "axios": "^0.18.0",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7",
+    "react": "^16.8.4",
+    "react-bootstrap": "^1.0.0-beta.6",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^9.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^5.15.3",
+    "eslint-config-react-app": "^3.0.8",
+    "eslint-plugin-flowtype": "^2.50.3",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "node-sass": "^4.11.0",
+    "parcel-bundler": "^1.12.3",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "scripts": {
+    "dev": "parcel index.html -p 3500",
+    "dev-no-cache": "parcel index.html --no-cache -p 3500",
+    "build": "parcel build ./src/index.html/"
+  }
+}
