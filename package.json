@@ -37,6 +37,6 @@
   "scripts": {
     "dev": "parcel index.html -p 3500",
     "dev-no-cache": "parcel index.html --no-cache -p 3500",
-    "build": "parcel build ./src/index.html/"
+    "build": "parcel build ./src/index.jsx/"
   }
 }

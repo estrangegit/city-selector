@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { setCity } from '../actions';
-import { searchCities } from '../actions';
+import { searchCitiesRequest } from '../actions';
 import CityForm from '../components/CityForm';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     setCity: (city) => dispatch(setCity(city)),
-    searchCities: (city) => dispatch(searchCities(city))
+    searchCitiesRequest: (city) => dispatch(searchCitiesRequest(city))
 });
 
 export default connect(

@@ -12,13 +12,13 @@ class CityForm extends React.Component{
     handleSubmit = (event) => {
         event.preventDefault();
         let name = this.props.city.name;    
-        let city = {...this.props.city, name:name}
-        this.props.searchCities(city);
-    }
+        let city = {...this.props.city, name:name};
+        this.props.searchCitiesRequest(city);
+    };
 
     handleNameChange = (event) => {
         let tempName = event.target.value;    
-        let tempCity = {...this.props.city, name:tempName}
+        let tempCity = {...this.props.city, name:tempName};
         this.props.setCity(tempCity);
     };
 
@@ -53,7 +53,7 @@ CityForm.propTypes = {
     formTitle: PropTypes.string.isRequired,
     city: PropTypes.object,
     setCity: PropTypes.func,
-    searchCities: PropTypes.func
+    searchCitiesRequest: PropTypes.func
   };
   
 export default CityForm;
