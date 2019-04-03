@@ -1,13 +1,11 @@
 import React from 'react';
-import VisibleForm from '../containers/VisibleForm'
+import VisibleCities from '../containers/VisibleCities';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const App = () =>   <div>
-                        <div className="jumbotron">
-                            <h1>City selector</h1>
-                        </div>
-                        <VisibleForm formTitle="Search for a city"/>
-                    </div>
-
+const App = () => (
+  <div>
+    <VisibleCities />
+  </div>
+);
 
 export default App;

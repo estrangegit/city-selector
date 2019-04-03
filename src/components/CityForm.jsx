@@ -11,13 +11,13 @@ class CityForm extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        let name = this.props.city.name;    
+        let name = this.props.city.name;
         let city = {...this.props.city, name:name};
         this.props.searchCitiesRequest(city);
     };
 
     handleNameChange = (event) => {
-        let tempName = event.target.value;    
+        let tempName = event.target.value;
         let tempCity = {...this.props.city, name:tempName};
         this.props.setCity(tempCity);
     };
@@ -28,19 +28,19 @@ class CityForm extends React.Component{
                 <Row>
                     <Col>
                         <h3 className="text-center">{this.props.formTitle}</h3>
-                    </Col>                    
+                    </Col>
                 </Row>
                 <Form onSubmit={this.handleSubmit}>
-                    <Row>
-                        <Col lg={{span:4, offset:2}}>
+                    <Row className="justify-content-md-center">
+                        <Col xs lg="3">
                             <Form.Group>
                                 <Form.Control type="text" placeholder="city name" value={this.props.city.name} onChange= {this.handleNameChange}/>
                             </Form.Group>
                         </Col>
-                        <Col>
+                        <Col xs lg="2">
                             <div>
                                 <Button className="Light"  type="submit">Search</Button>
-                            </div>                                
+                            </div>
                         </Col>
                     </Row>
                 </Form>
@@ -55,5 +55,5 @@ CityForm.propTypes = {
     setCity: PropTypes.func,
     searchCitiesRequest: PropTypes.func
   };
-  
+
 export default CityForm;
