@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { setCity } from '../actions';
+import { setCity } from 'actions';
 import { searchCitiesRequest } from '../actions';
-import CityForm from '../components/CityForm';
+import CityForm from 'components/CityForm';
 
 const mapStateToProps = (state, ownProps) => ({
     formTitle: ownProps.formTitle,

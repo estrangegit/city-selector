@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
-import City from './City';
+import City from 'components/City';
 
 const CityList = (props) => {
   return (

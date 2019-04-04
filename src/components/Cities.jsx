@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import VisibleForm from '../containers/VisibleForm';
-import CityList from './CityList';
+import VisibleForm from 'containers/VisibleForm';
+import CityList from 'components/CityList';
 
 class Cities extends React.Component {
 

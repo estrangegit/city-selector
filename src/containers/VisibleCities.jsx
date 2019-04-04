@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Cities from '../components/Cities';
+import Cities from 'components/Cities';
 
 const mapStateToProps = state => ({
     cities:state.citiesReducer.cities
