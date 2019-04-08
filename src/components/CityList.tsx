@@ -12,7 +12,7 @@ export const CityList = (props: any) => {
       </Row>
       <Row>
         <Col>
-          {props.cities.map((city) => (
+          {props.cities.map((city: any) => (
             <Card bg="light" key={city.code}>
               <City id={city.code} city={city} />
             </Card>

@@ -1,9 +1,24 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
     "jsx": "react",
-    "baseUrl": ".",
+    "rootDir": "./src",
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "es2015"
+    ],
+    "baseUrl": "./src",
     "paths": {
-      "*": ["src/*"],
+      "actions": ["./src/actions"],
+      "components": ["./src/components"],
+      "containers": ["./src/containers"],
+      "model": ["./src/model"],
+      "reducers": ["./src/reducers"],
+      "saga": ["./src/saga"],
+      "sass": ["./src/sass"]
     }
   }
 }

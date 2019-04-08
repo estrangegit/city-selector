@@ -1,4 +1,4 @@
-import { MCity } from "./../model/MCity";
+import { MCity } from "model/MCity";
 
  export const setCity = (city: MCity) => ({
      type: 'SET_CITY',

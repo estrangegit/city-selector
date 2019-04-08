@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { Cities } from 'components/Cities';
 
-const mapStateToProps = state => ({
+const mapStateToProps: any = state => ({
     cities:state.citiesReducer.cities
 });
 

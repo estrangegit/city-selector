@@ -2,7 +2,7 @@
   "name": "city-selector",
   "version": "1.0.0",
   "description": "sandbox to practice reactJs framework",
-  "main": "index.js",
+  "main": "index.tsx",
   "author": "Etienne Estrangin",
   "license": "UNLICENSED",
   "repository": {
@@ -22,7 +22,8 @@
     "reducers": "latest",
     "redux": "latest",
     "redux-saga": "latest",
-    "saga": "latest"
+    "saga": "latest",
+    "sass": "^1.17.4"
   },
   "devDependencies": {
     "@types/bootstrap": "latest",
@@ -30,27 +31,25 @@
     "@types/react": "latest",
     "@types/react-dom": "latest",
     "@types/react-redux": "latest",
-    "babel-core": "latest",
-    "babel-eslint": "latest",
-    "babel-plugin-transform-class-properties": "latest",
-    "babel-plugin-transform-object-rest-spread": "latest",
-    "babel-preset-env": "latest",
-    "babel-preset-react": "latest",
-    "eslint": "latest",
-    "eslint-config-react-app": "latest",
-    "eslint-plugin-flowtype": "latest",
-    "eslint-plugin-import": "latest",
-    "eslint-plugin-jsx-a11y": "latest",
-    "eslint-plugin-react": "latest",
+    "concurrently": "latest",
     "node-sass": "latest",
     "parcel-bundler": "latest",
+    "prettier": "latest",
     "redux-devtools-extension": "latest",
+    "tslint": "latest",
+    "tslint-config-airbnb": "latest",
+    "tslint-config-prettier": "latest",
+    "tslint-react": "latest",
     "typescript": "latest"
   },
   "scripts": {
-    "dev": "parcel index.html -p 3500",
-    "dev-no-cache": "parcel index.html --no-cache -p 3500",
-    "build": "parcel build index.html --public-url ./"
+    "develop": "concurrently -r \"yarn:type-check:watch\" \"yarn:start\"",
+    "start": "parcel ./src/index.html -p 3500",
+    "build": "parcel build ./src/index.html --public-url \"./\"",
+    "build-check": "yarn run type-check && parcel build ./src/index.html --public-url \"./\"",
+    "prettify": "prettier --write \"./src/**/*.{ts,tsx}\"",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch"
   },
   "alias": {
     "actions": "./src/actions",

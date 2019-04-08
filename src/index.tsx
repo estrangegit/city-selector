@@ -16,7 +16,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
-window['store'] = store;
+window.store= store;
 
 sagaMiddleware.run(watcherSaga);
 
@@ -28,11 +28,11 @@ ReactDOM.render(
 );
 
 
-if (module['hot']) {
-  module['hot'].dispose(function () {
+if (module.hot) {
+  module.hot.dispose(function () {
     // module is about to be replaced
   });
-module['hot'].accept(function () {
+module.hot.accept(function () {
     // module or one of its dependencies was just updated
   });
 }
