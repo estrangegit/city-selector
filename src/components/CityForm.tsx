@@ -1,22 +1,30 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-
+import * as React from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
+import { MCity } from 'model/MCity';
 
-class CityForm extends React.Component{
+interface CityFormProps {
+    formTitle: string,
+    city: MCity,
+    searchCitiesRequest: (city: MCity) => any,
+    setCity: (city: MCity) => any,
+}
 
-    constructor(props){
+export class CityForm extends React.Component<CityFormProps, any>{
+
+    constructor(props: any){
         super(props);
+        this.handleNameChange = this.handleNameChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleSubmit = (event) => {
+    handleSubmit = (event: any) => {
         event.preventDefault();
         let name = this.props.city.name;
         let city = {...this.props.city, name:name};
         this.props.searchCitiesRequest(city);
     };
 
-    handleNameChange = (event) => {
+    handleNameChange = (event: any) => {
         let tempName = event.target.value;
         let tempCity = {...this.props.city, name:tempName};
         this.props.setCity(tempCity);
@@ -48,12 +56,3 @@ class CityForm extends React.Component{
         );
     }
 }
-
-CityForm.propTypes = {
-    formTitle: PropTypes.string.isRequired,
-    city: PropTypes.object,
-    setCity: PropTypes.func,
-    searchCitiesRequest: PropTypes.func
-  };
-
-export default CityForm;

@@ -1,14 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
 
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { Provider } from 'react-redux';
-import rootReducer from 'reducers';
 import createSagaMiddleware from 'redux-saga'
-import { watcherSaga } from "saga/saga";
 
-import App from 'components/App';
+import { watcherSaga } from "./saga/saga";
+import { App } from './components/App';
+import rootReducer from './reducers';
 
 import "sass/main.scss"
 
@@ -16,7 +16,7 @@ const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(sagaMiddleware)));
 
-window.store = store;
+window['store'] = store;
 
 sagaMiddleware.run(watcherSaga);
 
@@ -28,11 +28,11 @@ ReactDOM.render(
 );
 
 
-if (module.hot) {
-  module.hot.dispose(function () {
+if (module['hot']) {
+  module['hot'].dispose(function () {
     // module is about to be replaced
   });
-module.hot.accept(function () {
+module['hot'].accept(function () {
     // module or one of its dependencies was just updated
   });
 }

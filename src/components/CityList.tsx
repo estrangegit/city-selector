@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as React from 'react';
 import { Col, Row, Card } from 'react-bootstrap';
-import City from 'components/City';
+import { City } from 'components/City';
 
-const CityList = (props) => {
+export const CityList = (props: any) => {
   return (
     <div>
       <Row>
@@ -15,7 +14,7 @@ const CityList = (props) => {
         <Col>
           {props.cities.map((city) => (
             <Card bg="light" key={city.code}>
-              <City id={city.code} name={city.name} population={city.population}/>
+              <City id={city.code} city={city} />
             </Card>
           ))}
         </Col>
@@ -23,10 +22,3 @@ const CityList = (props) => {
     </div>
   );
 };
-
-CityList.propTypes = {
-  cityListTitle: PropTypes.string.isRequired,
-  cities: PropTypes.array.isRequired,
-};
-
-export default CityList;

@@ -10,23 +10,28 @@
     "url": "https://github.com/estrangegit/city-selector.git"
   },
   "dependencies": {
+    "actions": "latest",
     "axios": "latest",
     "bootstrap": "latest",
-    "component": "^1.1.0",
     "jquery": "latest",
     "popper.js": "latest",
     "react": "latest",
     "react-bootstrap": "latest",
     "react-dom": "latest",
     "react-redux": "latest",
+    "reducers": "latest",
     "redux": "latest",
-    "redux-saga": "latest"
+    "redux-saga": "latest",
+    "saga": "latest"
   },
   "devDependencies": {
     "@types/bootstrap": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@types/react-redux": "latest",
     "babel-core": "latest",
     "babel-eslint": "latest",
-    "babel-plugin-module-resolver": "^3.2.0",
     "babel-plugin-transform-class-properties": "latest",
     "babel-plugin-transform-object-rest-spread": "latest",
     "babel-preset-env": "latest",
@@ -39,11 +44,20 @@
     "eslint-plugin-react": "latest",
     "node-sass": "latest",
     "parcel-bundler": "latest",
-    "redux-devtools-extension": "latest"
+    "redux-devtools-extension": "latest",
+    "typescript": "latest"
   },
   "scripts": {
     "dev": "parcel index.html -p 3500",
     "dev-no-cache": "parcel index.html --no-cache -p 3500",
     "build": "parcel build index.html --public-url ./"
+  },
+  "alias": {
+    "actions": "./src/actions",
+    "components": "./src/components",
+    "containers": "./src/containers",
+    "model": "./src/model",
+    "reducers": "./src/reducers",
+    "sass": "./src/sass"
   }
 }

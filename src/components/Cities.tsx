@@ -1,10 +1,12 @@
-import PropTypes from 'prop-types';
-import React from 'react';
+import * as React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import VisibleForm from 'containers/VisibleForm';
-import CityList from 'components/CityList';
+import { CityList } from 'components/CityList';
 
-class Cities extends React.Component {
+export class Cities extends React.Component<{cities: any[]}> {
+  constructor (props: any) {
+    super(props);
+  }
 
   render() {
     return (
@@ -35,9 +37,3 @@ class Cities extends React.Component {
     );
   }
 }
-
-Cities.propTypes = {
-  cities: PropTypes.array,
-};
-
-export default Cities;

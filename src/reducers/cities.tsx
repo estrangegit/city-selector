@@ -1,4 +1,6 @@
-const citiesReducer = (state = {city:{name:'', code:'', zipCodes:[], departmentCode:'', regionCode:'', population: ''}, cities:[], fetching: false, error: null}, action = {type: ''}) => {
+import { MCity } from 'model/MCity';
+
+export const citiesReducer = (state = {city: new MCity('', '', [], '', '', 0), cities: new Array<MCity>(), fetching: false, error: null}, action: any) => {
     switch (action.type) {
         case 'SET_CITY': {
             return {
@@ -21,5 +23,3 @@ const citiesReducer = (state = {city:{name:'', code:'', zipCodes:[], departmentC
             return state
     }
 };
-
-export {citiesReducer};
