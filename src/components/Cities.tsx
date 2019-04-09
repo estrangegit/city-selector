@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import VisibleForm from 'containers/VisibleForm';
-import { CityList } from 'components/CityList';
 import { MCity } from 'model/MCity';
+import VisibleCityList from 'containers/VisibleCityList';
 
 interface CitiesProps {
   cities: MCity[]
@@ -32,9 +32,8 @@ export class Cities extends React.Component<CitiesProps, any>{
         {this.props.cities.length > 0 && (
           <Row>
             <Col>
-              <CityList
+              <VisibleCityList
                 cityListTitle="List of cities found"
-                cities={this.props.cities}
               />
             </Col>
           </Row>

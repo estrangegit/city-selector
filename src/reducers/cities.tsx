@@ -1,14 +1,28 @@
 import { MCity } from 'model/MCity';
 
-export const citiesReducer = (state = {city: new MCity('', '', [], '', '', 0), cities: new Array<MCity>(), fetching: false, error: null}, action: any) => {
+export const citiesReducer = (state = {searchedCityName: '',
+                                        redirectDetails: false,
+                                        city: new MCity('', '', [], '', '', 0),
+                                        cities: new Array<MCity>(),
+                                        fetching: false,
+                                        error: null},
+                                        action: any) => {
     switch (action.type) {
         case 'SET_CITY': {
             return {
+                searchedCityName: state.searchedCityName,
+                redirectDetails: state.redirectDetails,
                 city: action.city,
                 cities: [...state.cities],
                 fetching: state.fetching,
                 error: state.error
             };            
+        }
+        case 'SET_SEARCHED_CITY_NAME': {
+            return {...state, searchedCityName: action.searchedCityName};            
+        }
+        case 'SET_REDIRECT_DETAILS': {
+            return {...state, redirectDetails: action.redirectDetails};
         }
         case 'SEARCH_CITIES_REQUEST':{
             return {...state, fetching: true, error: null};

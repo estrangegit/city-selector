@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
-import { MCity } from 'model/MCity';
 
 interface CityFormProps {
     formTitle: string,
-    city: MCity,
-    searchCitiesRequest: (city: MCity) => any,
-    setCity: (city: MCity) => any,
+    searchedCityName: string,
+    setSearchedCityName: (searchedCityName: string) => any,
+    searchCitiesRequest: (searchedCityName: string) => any,
 }
 
 export class CityForm extends React.Component<CityFormProps, any>{
@@ -19,15 +18,13 @@ export class CityForm extends React.Component<CityFormProps, any>{
 
     handleSubmit = (event: any) => {
         event.preventDefault();
-        const name = this.props.city.name;
-        const city = {...this.props.city, name};
-        this.props.searchCitiesRequest(city);
+        const name = this.props.searchedCityName;
+        this.props.searchCitiesRequest(name);
     };
 
     handleNameChange = (event: any) => {
-        const tempName = event.target.value;
-        const tempCity = {...this.props.city, name:tempName};
-        this.props.setCity(tempCity);
+        const tempSearchedCityname = event.target.value;
+        this.props.setSearchedCityName(tempSearchedCityname);
     };
 
     render(){
@@ -42,7 +39,7 @@ export class CityForm extends React.Component<CityFormProps, any>{
                     <Row className="justify-content-md-center">
                         <Col xs lg="3">
                             <Form.Group>
-                                <Form.Control type="text" placeholder="city name" value={this.props.city.name} onChange= {this.handleNameChange}/>
+                                <Form.Control type="text" placeholder="city name" value={this.props.searchedCityName} onChange= {this.handleNameChange}/>
                             </Form.Group>
                         </Col>
                         <Col xs lg="2">

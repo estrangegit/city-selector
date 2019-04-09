@@ -8,7 +8,6 @@ export const City = (props: CityProps) => {
   return (
     <Card.Body>
       <Card.Title as="h3">{props.city.name}</Card.Title>
-      <Card.Text>Population: {props.city.population}</Card.Text>
     </Card.Body>
   );
 };

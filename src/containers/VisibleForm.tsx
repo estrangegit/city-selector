@@ -1,16 +1,15 @@
 import { connect } from 'react-redux';
-import { setCity, searchCitiesRequest } from 'actions/index';
+import { searchCitiesRequest, setSearchedCityName } from 'actions/index';
 import { CityForm } from 'components/CityForm';
-import { MCity } from 'model/MCity';
 
 const mapStateToProps = (state: any, ownProps: any) => ({
     formTitle: ownProps.formTitle,
-    city: state.citiesReducer.city
+    searchedCityName: state.citiesReducer.searchedCityName
 });
 
 const mapDispatchToProps = (dispatch: any) => ({
-    setCity: (city: MCity) => dispatch(setCity(city)),
-    searchCitiesRequest: (city: MCity) => dispatch(searchCitiesRequest(city))
+    setSearchedCityName: (searchedCityName: string) => dispatch(setSearchedCityName(searchedCityName)),
+    searchCitiesRequest: (searchedCityName: string) => dispatch(searchCitiesRequest(searchedCityName))
 });
 
 export default connect(

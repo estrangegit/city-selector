@@ -15,13 +15,13 @@ function fetchCities(cityName:any) {
 
 function* workerSaga(action:any) {
     try {
-        const res = yield call(fetchCities, action.city.name);
+        const res = yield call(fetchCities, action.searchedCityName);
         const cities: Array<MCity> = 
-        res.data.map((c: { nom: string; code: string; codesPostaux: string[]; vcodeDepartement: string; codeRegion: string; population: number; }) => ({
+        res.data.map((c: { nom: string; code: string; codesPostaux: string[]; codeDepartement: string; codeRegion: string; population: number; }) => ({
             name : c.nom,
             code : c.code,
             zipCodes: c.codesPostaux,
-            departmentCode: c.vcodeDepartement,
+            departmentCode: c.codeDepartement,
             regionCode: c.codeRegion,
             population: c.population
         }));
