@@ -8,7 +8,7 @@ const mapStateToProps = (state: any, ownProps: any) => ({
     city: state.citiesReducer.city
 });
 
-const mapDispatchToProps: any = dispatch => ({
+const mapDispatchToProps = (dispatch: any) => ({
     setCity: (city: MCity) => dispatch(setCity(city)),
     searchCitiesRequest: (city: MCity) => dispatch(searchCitiesRequest(city))
 });

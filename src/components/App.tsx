@@ -5,6 +5,6 @@ import VisibleCities from 'containers/VisibleCities';
 
 export const App = () => (
   <div>
-    <VisibleCities />
+    <VisibleCities/>
   </div>
 );

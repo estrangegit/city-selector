@@ -2,8 +2,14 @@ import * as React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import VisibleForm from 'containers/VisibleForm';
 import { CityList } from 'components/CityList';
+import { MCity } from 'model/MCity';
 
-export class Cities extends React.Component<{cities: any[]}> {
+interface CitiesProps {
+  cities: MCity[]
+}
+
+export class Cities extends React.Component<CitiesProps, any>{
+
   constructor (props: any) {
     super(props);
   }

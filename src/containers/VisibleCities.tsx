@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { Cities } from 'components/Cities';
 
-const mapStateToProps: any = state => ({
+const mapStateToProps = (state: any) => ({
     cities:state.citiesReducer.cities
 });
 
 export default connect(
-    mapStateToProps,
+    mapStateToProps
 )(Cities)
 

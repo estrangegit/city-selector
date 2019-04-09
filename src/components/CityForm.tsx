@@ -19,14 +19,14 @@ export class CityForm extends React.Component<CityFormProps, any>{
 
     handleSubmit = (event: any) => {
         event.preventDefault();
-        let name = this.props.city.name;
-        let city = {...this.props.city, name:name};
+        const name = this.props.city.name;
+        const city = {...this.props.city, name};
         this.props.searchCitiesRequest(city);
     };
 
     handleNameChange = (event: any) => {
-        let tempName = event.target.value;
-        let tempCity = {...this.props.city, name:tempName};
+        const tempName = event.target.value;
+        const tempCity = {...this.props.city, name:tempName};
         this.props.setCity(tempCity);
     };
 
